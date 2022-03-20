@@ -1,17 +1,31 @@
 <!DOCTYPE html>
 <html th:fragment="layout (title, content)" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <title th:replace="${title}">Layout Title</title>
+  <title th:replace="${title}"></title>
 
-  <div id="header" th:insert="~{layouts/_header::header}">insert</div>
+  <div id="header" th:insert="~{layouts/_header::header}"></div>
+  <script src="http://66.lacknb.cn/ssm/js/jquery3.3.js"></script>
+  <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" rel="stylesheet">
+  <script crossorigin="anonymous"
+          integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+          src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" th:href="@{css/app.scss}">
 </head>
 <body>
-<h1>Layout H1</h1>
-<div th:replace="${content}">
-  <p>Layout content</p>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="/">Weibo App</a>
+    <ul class="navbar-nav justify-content-end">
+      <li class="nav-item"><a class="nav-link" href="/help">帮助</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">登录</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="container" th:replace="${content}">
 </div>
 
 <!--直接插入模板片段-->
-<div id="footer" th:insert="~{layouts/_footer::footer}">insert</div>
+<div id="footer" th:insert="~{layouts/_footer::footer}"></div>
 </body>
 </html>
