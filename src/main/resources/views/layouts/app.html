@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html th:fragment="layout (title, content)" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title th:replace="${title}">Layout Title</title>
+
+  <div id="header" th:insert="~{layouts/_header::header}">insert</div>
+</head>
+<body>
+<h1>Layout H1</h1>
+<div th:replace="${content}">
+  <p>Layout content</p>
+</div>
+
+<!--直接插入模板片段-->
+<div id="footer" th:insert="~{layouts/_footer::footer}">insert</div>
+</body>
+</html>
